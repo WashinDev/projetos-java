@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.projetoapi.api.model.Pessoa;
 import br.com.projetoapi.api.repo.Repo;
+import br.com.projetoapi.api.servico.Servico;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,30 +24,32 @@ public class Controle {
     @Autowired
     private Repo acao;
 
+    @Autowired
+    private Servico servico;
+
     @PostMapping("/api")
-    public Pessoa cadastrar(@RequestBody Pessoa obj) {
-        return acao.save(obj);
+    public ResponseEntity<?> cadastrar(@RequestBody Pessoa obj) {
+        return servico.cadastrar(obj);
     }
 
     @GetMapping("/api")
-    public List<Pessoa> selecionar() {
-        return acao.findAll();
+    public ResponseEntity<?> selecionar() {
+        return servico.selecionar();
     }
 
     @GetMapping("/api/{codigo}")
-    public Pessoa selecionarPeloCodigo(@PathVariable int codigo) {
-        return acao.findByCodigo(codigo);
+    public ResponseEntity<?> selecionarPeloCodigo(@PathVariable int codigo) {
+        return servico.selecionarPeloCodigo(codigo);
     }
 
     @PutMapping("/api")
-    public Pessoa editar(@RequestBody Pessoa obj) {
-        return acao.save(obj);
+    public ResponseEntity<?> editar(@RequestBody Pessoa obj) {
+        return servico.editar(obj);
     }
 
     @DeleteMapping("/api/{codigo}")
-    public void remover(@PathVariable int codigo) {
-        Pessoa obj = selecionarPeloCodigo(codigo);
-        acao.delete(obj);
+    public ResponseEntity<?> remover(@PathVariable int codigo) {
+        return servico.remover(codigo);
     }
 
     @GetMapping("/api/contador")
