@@ -2,9 +2,11 @@ package br.com.projetoapi.api.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.projetoapi.api.model.Client;
 import br.com.projetoapi.api.model.Pessoa;
 import br.com.projetoapi.api.repo.Repo;
 import br.com.projetoapi.api.servico.Servico;
+import jakarta.validation.Valid;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -115,6 +117,11 @@ public class Controle {
     @GetMapping("/status")
     public ResponseEntity<?> status() {
         return new ResponseEntity<>(HttpStatus.CREATED);
+    }
+
+    @PostMapping("/cliente")
+    public void cliente(@Valid @RequestBody Client obj) {
+        
     }
 
 }
