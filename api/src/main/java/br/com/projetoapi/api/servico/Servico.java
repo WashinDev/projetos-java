@@ -54,7 +54,7 @@ public class Servico {
             return new ResponseEntity<>(mensagem, HttpStatus.BAD_REQUEST);
         } else if (obj.getIdade() < 0){
             mensagem.setMensagem("informe uma idade válida");
-            return new ResponseEntity<>(mensagem, HttpStatus.BAD_REQUEST)
+            return new ResponseEntity<>(mensagem, HttpStatus.BAD_REQUEST);
         } else {
             return new ResponseEntity<>(acao.save(obj), HttpStatus.OK);
         }
