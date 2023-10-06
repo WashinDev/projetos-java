@@ -2,11 +2,7 @@ package com.wash.springboottodoapp.models;
 
 import java.time.Instant;
 
-import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 
 import lombok.Getter;
@@ -15,7 +11,7 @@ import lombok.Setter;
 @jakarta.persistence.Entity
 @jakarta.persistence.Table(name = "todo_item")
 public class TodoItem {
-
+ 
     @jakarta.persistence.Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.AUTO)
     @Getter
