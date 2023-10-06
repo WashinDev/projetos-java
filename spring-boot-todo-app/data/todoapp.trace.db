@@ -54,3 +54,24 @@ Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Wrong user name
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:510)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
 	... 50 more
+2023-10-06 16:50:26 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TODO_ITEM" not found (this database is empty); SQL statement:
+SELECT *  FROM TODO_ITEM [42104-214]
+2023-10-06 16:50:50 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TODO_ITEM" not found (this database is empty); SQL statement:
+SELECT *  FROM TODO_ITEM [42104-214]
+2023-10-06 16:50:50 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TODO_ITEM" not found (this database is empty); SQL statement:
+SELECT *  FROM TODO_ITEM [42104-214]
+2023-10-06 16:50:53 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TODO_ITEM" not found (this database is empty); SQL statement:
+SELECT *  FROM TODO_ITEM [42104-214]
+2023-10-06 16:50:54 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TODO_ITEM" not found (this database is empty); SQL statement:
+SELECT *  FROM TODO_ITEM [42104-214]
+2023-10-06 16:50:54 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TODO_ITEM" not found (this database is empty); SQL statement:
+SELECT *  FROM TODO_ITEM [42104-214]
+2023-10-06 16:50:55 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TODO_ITEM" not found (this database is empty); SQL statement:
+SELECT *  FROM TODO_ITEM [42104-214]

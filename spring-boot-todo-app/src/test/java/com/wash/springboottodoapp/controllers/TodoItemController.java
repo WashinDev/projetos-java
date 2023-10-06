@@ -17,9 +17,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.wash.springboottodoapp.models.TodoItem;
+import com.wash.springboottodoapp.repositories.TodoItemRepository;
+
 @Controller
 public class TodoItemController {
     private final Logger logger = LoggerFactory.getLogger(TodoItemController.class);
+
+    @Autowired
+    private TodoItemRepository todoItemRepository;
 
     @GetMapping("/")
     public ModelAndView index() {
@@ -28,5 +34,16 @@ public class TodoItemController {
         modelAndView.addObject("todoItems", todoItemRepository.findAll());
         modelAndView.addObject("today", Instant.now().atZone(ZoneId.systemDefault()).toLocalDate().getDayOfWeek());
         return modelAndView;
+    }
+
+    public String createTodoItem(@Valid TodoItem todoItem, BindingResult result, Model model) {
+        if (result.hasErrors()) {
+            return "add-todo-item";
+        }
+
+        todoItem.setCreatedDate(Instant.now());
+        todoItem.setModifiedDate(Instant.now());
+        todoItemRepository.save(todoItem);
+        return "redirect:/";
     }
 }
